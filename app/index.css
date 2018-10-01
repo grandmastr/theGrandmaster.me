@@ -1,9 +1,8 @@
 body{
-    text-align:center;
     background:silver;
 }
 ul{
-    list-style-type: none;
+    list-style-type: square;
     color:orangered;
     user-select: none;
 }
