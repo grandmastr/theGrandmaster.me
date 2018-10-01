@@ -1,17 +1,20 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+let React = require('react');
+let ReactDOM = require('react-dom');
 require('./index.css');
 
-class App extends React.Component {
+class User extends React.Component {
     render() {
-        return (
+        return(
             <div>
-                Hello, Israel Akintunde
+                <h1>{this.props.username}</h1>
+                <p>The courses to be sold to them are as listed below</p>
+                <ul>
+                    {}
+                </ul>
             </div>
         )
     }
 }
-
 ReactDOM.render(
-    <App />,document.getElementById('app')
+    <App username=/>,document.getElementById('app')
 );
