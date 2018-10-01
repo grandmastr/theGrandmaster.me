@@ -2,3 +2,8 @@ body{
     text-align:center;
     background:silver;
 }
+ul{
+    list-style-type: none;
+    color:orangered;
+    user-select: none;
+}
