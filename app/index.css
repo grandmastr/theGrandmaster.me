@@ -1,8 +1,23 @@
+:root{
+    --text-color: #fff;
+}
 body{
-    background:silver;
+    font-family: -apple-system, SansSerif, Ubuntu, Cantarell, serif;
 }
 ul{
-    list-style-type: square;
-    color:orangered;
-    user-select: none;
+    padding:0;
+    list-style-type: none;
+}
+.container{
+    max-width:1200px;
+    margin:0 auto;
+}
+.languages{
+    display: flex;
+    justify-content: center;
+}
+.languages li{
+    margin:10px;
+    font-weight: bold;
+    cursor: pointer;
 }
