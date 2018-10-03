@@ -41,6 +41,11 @@ ul{
     flex-wrap: wrap;
     justify-content: space-around;
 }
+@media(max-width:979px) {
+    .popular-list{
+        display:block;
+    }
+}
 .popular-item{
     margin:20px;
     text-align: center;
