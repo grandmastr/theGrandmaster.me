@@ -21,7 +21,7 @@ function RepoGrid(props) {
                         <li>
                             <img className="avatar" src={repo.owner.avatar_url} alt={"Avatar for " + repo.owner.login} />
                         </li>
-                        <li class="repo-url">
+                        <li className="repo-url">
                             <a href={repo.html_url}>
                                 {repo.name}
                             </a>
