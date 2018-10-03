@@ -41,7 +41,7 @@ ul{
     flex-wrap: wrap;
     justify-content: space-around;
 }
-@media(max-width:979px) {
+@media(max-width:1000px) {
     .container{
         width:100% !important;
     }
