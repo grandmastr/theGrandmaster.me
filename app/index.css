@@ -42,8 +42,13 @@ ul{
     justify-content: space-around;
 }
 @media(max-width:979px) {
+    .container{
+        width:100% !important;
+    }
     .popular-list{
-        display:block;
+        display:block !important;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
     }
 }
 .popular-item{
