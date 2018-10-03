@@ -1,8 +1,23 @@
 :root{
     --text-color: #fff;
+    --primary-text-color:#00AFF0;
 }
 body{
     font-family: -apple-system, SansSerif, Ubuntu, Cantarell, serif;
+}
+body::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 3px;
+}
+body::-webkit-scrollbar-track {
+    background: #fff;
+}
+body::-webkit-scrollbar-thumb {
+    background: var(--primary-text-color);
+    border-radius: 3px;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-text-color);
 }
 ul{
     padding:0;
@@ -20,4 +35,37 @@ ul{
     margin:10px;
     font-weight: bold;
     cursor: pointer;
+}
+.popular-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.popular-item{
+    margin:20px;
+    text-align: center;
+}
+.space-list-items{
+    margin-bottom: 7px;
+}
+.avatar{
+    width:150px;
+    border:2px solid var(--primary-text-color);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.font-size{
+    font-size:20px;
+    margin:10px;
+}
+.loading-text{
+    color:var(--primary-text-color);
+    font-size:30px;
+    text-align: center;
+}
+.repo-url a{
+    text-decoration: none !important;
+    text-transform: uppercase;
+    color:var(--primary-text-color);
 }
