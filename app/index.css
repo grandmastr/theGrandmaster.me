@@ -5,6 +5,10 @@
 body{
     font-family: -apple-system, SansSerif, Ubuntu, Cantarell, serif;
 }
+::selection{
+    color:var(--text-color);
+    background: var(--primary-text-color);
+}
 body::-webkit-scrollbar {
     width: 3px;
     border-radius: 3px;
@@ -46,12 +50,12 @@ ul{
         width:100% !important;
     }
     .popular-list{
-        display:block !important;
-        flex-wrap: nowrap;
-        justify-content: space-evenly;
+        display: block;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
     .avatar{
-        width:220px;
+        width:250px;
     }
 }
 .popular-item{
