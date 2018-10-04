@@ -79,7 +79,7 @@ ul{
 .loading-text{
     color:var(--primary-text-color);
     font-size:30px;
-    text-transform: uppercase;g
+    text-transform: uppercase;
     text-align: center;
 }
 .repo-url a{
