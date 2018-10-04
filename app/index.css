@@ -50,6 +50,9 @@ ul{
         flex-wrap: nowrap;
         justify-content: space-evenly;
     }
+    .avatar{
+        width:220px;
+    }
 }
 .popular-item{
     margin:20px;
