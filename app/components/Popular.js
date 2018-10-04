@@ -10,7 +10,7 @@ const SelectLanguage = (props) => {
         </ul>
     )
 };
-const  RepoGrid = (props) => {
+const  RepoGrid = props => {
     return(
         <ul className="popular-list">
             {props.repos.map((repo,index) => (
@@ -61,7 +61,7 @@ class Popular extends React.Component {
            }
         });
         api.fetchPopularRepos(lang)
-            .then((repos) => {
+            .then(repos => {
                 this.setState(() => {
                    return {
                        repos: repos
