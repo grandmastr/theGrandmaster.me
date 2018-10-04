@@ -7,7 +7,7 @@ Run
 Run
 >npm run start
 
-Then server starts on port 8080
+###4.   The application is live on
 
 >localhost:8080
 
