@@ -1,7 +1,7 @@
 let React = require('react');
 let PropTypes = require('prop-types');
 let api = require('../utils/api');
-function SelectLanguage(props) {
+let SelectLanguage = (props) => {
     let languages = ['All','JavaScript','Ruby','Java','CSS','Python'];
     return(
         <ul className="languages">
@@ -9,7 +9,7 @@ function SelectLanguage(props) {
         </ul>
     )
 }
-function RepoGrid(props) {
+let  RepoGrid = (props) => {
     return(
         <ul className="popular-list">
             {props.repos.map((repo,index) => (
