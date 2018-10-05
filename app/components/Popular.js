@@ -34,7 +34,7 @@ const  RepoGrid = props => {
         </ul>
     )
 };
-RepoGrid.propeType = {
+RepoGrid.propType = {
     repos: PropTypes.array.isRequired
 };
 SelectLanguage.propTypes = {
