@@ -87,3 +87,41 @@ ul{
     text-transform: uppercase;
     color:var(--primary-text-color);
 }
+a {
+    text-decoration: none;
+    color:var(--primary-text-color);
+}
+.nav{
+    display: flex;
+}
+.nav li a{
+    margin-right:15px !important;
+}
+.active{
+    font-weight:bold;
+}
+.home-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button{
+    color:#e6e6e6;
+    background: #0a0a0a;
+    border:none;
+    border-radius:3px;
+    font-size:20px;
+    width:200px;
+    text-align: center;
+    display: block;
+    padding:7px 0;
+    margin:10px auto;
+}
+.button:hover:enabled{
+    background: linear-gradient(#1a1a1a,#0a0a0a);
+    color:#fff;
+    text-decoration: none;
+}
+.button:active{
+    transform: translateY(1px);
+}
