@@ -109,7 +109,8 @@ a {
     color:#e6e6e6;
     background: #0a0a0a;
     border:none;
-    font-size:16px;
+    border-radius:3px;
+    font-size:20px;
     width:200px;
     text-align: center;
     display: block;
