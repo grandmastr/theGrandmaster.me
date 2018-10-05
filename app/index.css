@@ -87,3 +87,16 @@ ul{
     text-transform: uppercase;
     color:var(--primary-text-color);
 }
+a {
+    text-decoration: none;
+    color:var(--primary-text-color);
+}
+.nav{
+    display: flex;
+}
+.nav li a{
+    margin-right:15px !important;
+}
+.active{
+    font-weight:bold;
+}
