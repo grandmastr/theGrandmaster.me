@@ -1,5 +1,4 @@
 let React = require('react');
-let Popular = require('./Popular');
 let ReactRouter = require('react-router-dom');
 let Router = ReactRouter.BrowserRouter;
 let Route = ReactRouter.Route;
@@ -7,6 +6,7 @@ let Switch = ReactRouter.Switch;
 let Nav = require('./Nav');
 let Home = require('./Home');
 let Battle = require('./Battle');
+let Popular = require('./Popular');
 class App extends React.Component {
     render() {
         return(

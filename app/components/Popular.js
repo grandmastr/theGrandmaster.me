@@ -23,7 +23,7 @@ const  RepoGrid = props => {
                             <img className="avatar" src={repo.owner.avatar_url} alt={`Avatar for ${repo.owner.login}`} />
                         </li>
                         <li className="repo-url">
-                            <a href={repo.html_url}>
+                            <a href={repo.html_url} target="_blank">
                                 {repo.name}
                             </a>
                         </li>
