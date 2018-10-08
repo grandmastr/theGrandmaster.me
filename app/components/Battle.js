@@ -4,27 +4,23 @@ class Battle extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            time : new Date().toLocaleTimeString()
+            playerOneName: '',
+            playerTwoName: '',
+            playerOneImage: null,
+            playerTwoImage: null
         };
-        this.updateTime = this.updateTime.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
-    componentDidMount() {
-        setInterval(this.updateTime,'1000');
-    }
-    updateTime() {
+    handleSubmit(id,username) {
         this.setState(() => {
-            return {
-                time: new Date().toLocaleTimeString()
-            }
-        });
+            var newState = {};
+            newState[`${id}Name`] = username;
+            newState[`${id}Image`] = `https://github.com/${username}.png?size=200`;
+        })
     }
     render() {
         return (
-            <div>
-                <h2>
-                    { this.state.time }
-                </h2>
-            </div>
+
         )
     }
 }
