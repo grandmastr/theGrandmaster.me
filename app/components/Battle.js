@@ -12,7 +12,6 @@ class PlayerInput extends React.Component {
     }
     handleChange(event) {
         let value = event.target.value;
-        console.log(value);
         this.setState(() => {
             return {
                 username: value
@@ -64,6 +63,7 @@ class Battle extends React.Component {
             let newState = {};
             newState[`${id}Name`] = username;
             newState[`${id}Image`] = `https://github.com/${username}.png?size=200`;
+            return newState;
         })
     }
     render() {
@@ -71,10 +71,10 @@ class Battle extends React.Component {
         let playerTwoName = this.state.playerTwoName;
         return (
             <div className="row">
-                { !playerOneName &&
+                {!playerOneName &&
                 <PlayerInput id="playerOne" label="Player One" onSubmit={ this.handleSubmit }/> }
 
-                { !playerTwoName &&
+                {!playerTwoName &&
                 <PlayerInput id="playerTwo" label="Player Two" onSubmit={ this.handleSubmit }/> }
             </div>
         )
