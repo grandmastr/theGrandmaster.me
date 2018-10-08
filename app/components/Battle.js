@@ -8,7 +8,7 @@ class Battle extends React.Component {
         };
         this.updateTime = this.updateTime.bind(this);
     }
-    componentWillMount() {
+    componentDidMount() {
         setInterval(this.updateTime,'1000');
     }
     updateTime() {
