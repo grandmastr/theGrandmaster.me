@@ -12,8 +12,11 @@ class PlayerInput extends React.Component {
     }
     handleChange(event) {
         let value = event.target.value;
+        console.log(value);
         this.setState(() => {
-            username: value
+            return {
+                username: value
+            }
         });
     }
     handleSubmit(event) {
