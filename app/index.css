@@ -31,6 +31,29 @@ ul{
     max-width:1200px;
     margin:0 auto;
 }
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    width:500px;
+    align-items: center;
+}
+.column label {
+    color:#000;
+    font-size:25px;
+    font-weight:200;
+}
+.column input {
+    border-radius: 3px;
+    margin:10px 0;
+    padding: 8px;
+    border: 2px solid var(--primary-text-color);
+    font-size:16px;
+    width:90%;
+}
 .languages{
     display: flex;
     justify-content: center;
