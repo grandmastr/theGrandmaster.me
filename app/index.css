@@ -152,3 +152,14 @@ a {
     display: flex;
     justify-content: space-around;
 }
+.reset{
+    border:none;
+    background: transparent;
+    color: var(--primary-text-color);
+    display:block;
+    width:100%;
+    text-align: center;
+}
+.reset:hover{
+    cursor: pointer;
+}
