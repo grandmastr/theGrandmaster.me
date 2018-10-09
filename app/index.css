@@ -54,6 +54,9 @@ ul{
     font-size:16px;
     width:90%;
 }
+.column input:focus {
+    outline: none;
+}
 .languages{
     display: flex;
     justify-content: center;
@@ -145,10 +148,24 @@ a {
     color:#fff;
     text-decoration: none;
 }
+.button:hover:disabled {
+    background: linear-gradient(#201f20, #1d1d1d);
+}
 .button:active{
     transform: translateY(1px);
 }
 .row{
     display: flex;
     justify-content: space-around;
+}
+.reset{
+    border:none;
+    background: transparent;
+    color: var(--primary-text-color);
+    display:block;
+    width:100%;
+    text-align: center;
+}
+.reset:hover{
+    cursor: pointer;
 }
