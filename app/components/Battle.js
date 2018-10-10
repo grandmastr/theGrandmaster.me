@@ -1,6 +1,6 @@
 let React = require('react');
 let PropTypes = require('prop-types');
-
+let Link = require('react-router-dom').Link;
 const PlayerPreview = (props) => {
     return (
         <div>
@@ -97,23 +97,36 @@ class Battle extends React.Component {
         });
     }
     render() {
+        let match = this.props.match;
         let playerOneName = this.state.playerOneName;
         let playerTwoName = this.state.playerTwoName;
         let playerOneImage = this.state.playerOneImage;
         let playerTwoImage = this.state.playerTwoImage;
         return (
-            <div className="row">
-                {!playerOneName &&
-                <PlayerInput id="playerOne" label="Player One" onSubmit={ this.handleSubmit }/> }
+            <div>
+                <div className="row">
+                    {!playerOneName &&
+                    <PlayerInput id="playerOne" label="Player One" onSubmit={ this.handleSubmit }/> }
 
-                {!playerTwoName &&
-                <PlayerInput id="playerTwo" label="Player Two" onSubmit={ this.handleSubmit }/> }
+                    {!playerTwoName &&
+                    <PlayerInput id="playerTwo" label="Player Two" onSubmit={ this.handleSubmit }/> }
 
-                {playerOneImage !== null &&
-                <PlayerPreview avatar={playerOneImage} username={playerOneName} onReset={this.handleReset} id="playerOne"/>}
+                    {playerOneImage !== null &&
+                    <PlayerPreview avatar={playerOneImage} username={playerOneName} onReset={this.handleReset} id="playerOne"/>}
 
-                {playerTwoImage !== null &&
-                <PlayerPreview avatar={playerTwoImage} username={playerTwoName} onReset={this.handleReset} id="playerTwo"/>}
+                    {playerTwoImage !== null &&
+                    <PlayerPreview avatar={playerTwoImage} username={playerTwoName} onReset={this.handleReset} id="playerTwo"/>}
+                </div>
+                {playerOneImage && playerTwoImage &&
+                <Link className="button" to={
+                    {
+                        pathname: `${match.url}/results`,
+                        search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}`
+                    }
+                }>
+                    Battle
+                </Link>
+                }
             </div>
         )
     }
