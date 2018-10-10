@@ -161,6 +161,7 @@ a {
 }
 .reset{
     border:none;
+    outline:none;
     background: transparent;
     color: var(--primary-text-color);
     display:block;

@@ -1,7 +1,7 @@
 let React = require('react');
 let PropTypes = require('prop-types');
 
-const PlayerPreview = () => {
+const PlayerPreview = (props) => {
     return (
         <div>
             <div className="column">
@@ -110,10 +110,10 @@ class Battle extends React.Component {
                 <PlayerInput id="playerTwo" label="Player Two" onSubmit={ this.handleSubmit }/> }
 
                 {playerOneImage !== null &&
-                <PlayerPreview avatar={playerOneImage} username={playerOneName} onReset={this.handleReset} id="Player One"/>}
+                <PlayerPreview avatar={playerOneImage} username={playerOneName} onReset={this.handleReset} id="playerOne"/>}
 
                 {playerTwoImage !== null &&
-                <PlayerPreview avatar={playerTwoImage} username={playerTwoName} onReset={this.handleReset} id="Player two"/>}
+                <PlayerPreview avatar={playerTwoImage} username={playerTwoName} onReset={this.handleReset} id="playerTwo"/>}
             </div>
         )
     }
