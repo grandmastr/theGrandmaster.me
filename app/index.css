@@ -56,6 +56,7 @@ ul{
 }
 .column input:focus {
     outline: none;
+    border-color: #000;
 }
 .languages{
     display: flex;

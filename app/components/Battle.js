@@ -19,6 +19,7 @@ const PlayerPreview = () => {
 PlayerPreview.propTypes = {
     avatar: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
     onReset : PropTypes.func.isRequired
 };
 class PlayerInput extends React.Component {
@@ -76,7 +77,8 @@ class Battle extends React.Component {
             playerOneImage: null,
             playerTwoImage: null
         };
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
     handleSubmit(id,username) {
         this.setState(() => {
@@ -86,10 +88,14 @@ class Battle extends React.Component {
             return newState;
         })
     }
-    // handleReset(id) {
-    //     this.setState(() => {
-    //     })
-    // }
+    handleReset(id) {
+        this.setState(() => {
+            let newState = {};
+            newState[`${id}Name`] = '';
+            newState[`${id}Image`] = null;
+            return newState;
+        });
+    }
     render() {
         let playerOneName = this.state.playerOneName;
         let playerTwoName = this.state.playerTwoName;
