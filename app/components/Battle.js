@@ -1,7 +1,7 @@
 let React = require('react');
 let PropTypes = require('prop-types');
 let Link = require('react-router-dom').Link;
-const PlayerPreview = (props) => {
+const PlayerPreview = props => {
     return (
         <div>
             <div className="column">
