@@ -31,7 +31,11 @@ class Loading extends React.Component {
                     }
                 });
             }
-        },300)
+        },this.props.speed)
+    }
+    componentWillUnmount() {
+        console.log("Clear the interval");
+        window.clearInterval(this.interval);
     }
     render() {
         return (
@@ -42,9 +46,11 @@ class Loading extends React.Component {
     }
 }
 Loading.propTypes = {
-    text: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired,
+    speed: PropTypes.number.isRequired
 };
 Loading.defaultProps = {
-    text: "Loading"
+    text: "Loading",
+    speed: 300,
 };
 module.exports = Loading;
