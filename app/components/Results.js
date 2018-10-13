@@ -4,6 +4,7 @@ let api = require('../utils/api');
 let Link = require('react-router-dom').Link;
 let PropTypes = require('prop-types');
 let PlayerPreview = require('./PlayerPreview');
+let Loading = require('./loading');
 
 const Profile = props => {
     let info = props.info;
@@ -84,7 +85,7 @@ class Results extends React.Component {
         let loser = this.state.loser;
         let loading = this.state.loading;
         if (loading === true) {
-            return <p className="loading-text">Loading...</p>
+            return <Loading/>
         }
         if(error) {
             return (
