@@ -5,7 +5,7 @@ class Results extends React.Component {
         console.log(this.props);
         return(
             <h1>
-                Result
+                Results
             </h1>
         )
     }
