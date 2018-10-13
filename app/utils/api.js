@@ -6,7 +6,7 @@ let getProfile = username => {
         })
 };
 const getRepos = username => {
-    return axios.get(`https://api.github.com/users/${username}/repos&per_page=100`)
+    return axios.get(`https://api.github.com/users/${username}/repos`)
 };
 const getStarCount = repos => {
     return repos.data.reduce(
@@ -39,7 +39,7 @@ const getUserData = player => {
     });
 };
 const sortPlayers = players => {
-    return player.sort((a,b) => {
+    return players.sort((a,b) => {
         return b.score - a.score;
     })
 };

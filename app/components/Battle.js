@@ -1,27 +1,8 @@
 let React = require('react');
 let PropTypes = require('prop-types');
 let Link = require('react-router-dom').Link;
-const PlayerPreview = props => {
-    return (
-        <div>
-            <div className="column">
-                <img src={props.avatar} alt={`Avatar for ${props.username}`} className="avatar"/>
-                <h2 className="username">
-                    {`@${props.username}`}
-                </h2>
-            </div>
-            <button className="reset" onClick={props.onReset.bind(null,props.id)}>
-                Reset
-            </button>
-        </div>
-    )
-};
-PlayerPreview.propTypes = {
-    avatar: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    onReset : PropTypes.func.isRequired
-};
+let PlayerPreview = require('./PlayerPreview');
+
 class PlayerInput extends React.Component {
     constructor(props) {
         super(props);
@@ -112,10 +93,18 @@ class Battle extends React.Component {
                     <PlayerInput id="playerTwo" label="Player Two" onSubmit={ this.handleSubmit }/> }
 
                     {playerOneImage !== null &&
-                    <PlayerPreview avatar={playerOneImage} username={playerOneName} onReset={this.handleReset} id="playerOne"/>}
+                    <PlayerPreview avatar={playerOneImage} username={playerOneName}>
+                        <button className="reset" onClick={this.handleReset.bind(null,"playerOne")}>
+                            Reset
+                        </button>
+                    </PlayerPreview>}
 
                     {playerTwoImage !== null &&
-                    <PlayerPreview avatar={playerTwoImage} username={playerTwoName} onReset={this.handleReset} id="playerTwo"/>}
+                    <PlayerPreview avatar={playerTwoImage} username={playerTwoName}>
+                        <button className="reset" onClick={this.handleReset.bind(null,"playerTwo")}>
+                            Reset
+                        </button>
+                    </PlayerPreview>}
                 </div>
                 {playerOneImage && playerTwoImage &&
                 <Link className="button" to={
