@@ -63,9 +63,12 @@ class Battle extends React.Component {
     }
     handleSubmit(id,username) {
         this.setState(() => {
-            let newState = {};
-            newState[`${id}Name`] = username;
-            newState[`${id}Image`] = `https://github.com/${username}.png?size=200`;
+            let userName = `${id}Name`;
+            let userImage = `${id}Image`;
+            let newState = {
+                [userName] : username,
+                [userImage] : `https://github.com/${username}.png?size=200`
+            };
             return newState;
         })
     }
