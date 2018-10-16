@@ -1,7 +1,7 @@
 node_modules
 .vscodes
 .idea
-.firebase
 dist
+.firebase.json
 .firebaserc
-firebase.json
+.firebase
