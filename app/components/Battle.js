@@ -4,22 +4,22 @@ import { Link } from 'react-router-dom';
 import PlayerPreview from './PlayerPreview';
 
 class PlayerInput extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: ''
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-    handleChange(event) {
+    static propType = {
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        onSubmit: PropTypes.func.isRequired
+    };
+    state = {
+        username: ''
+    };
+    handleChange = event => {
         let value = event.target.value;
         this.setState(() => ({username: value}));
-    }
-    handleSubmit(event) {
+    };
+    handleSubmit = event => {
         event.preventDefault();
         this.props.onSubmit(this.props.id,this.state.username)
-    }
+    };
     render() {
         const { username } = this.state;
         const { label } = this.props;
@@ -42,24 +42,15 @@ class PlayerInput extends React.Component {
         )
     }
 }
-PlayerInput.propType = {
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    onSubmit: PropTypes.func.isRequired
-};
+
 class Battle extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            playerOneName: '',
-            playerTwoName: '',
-            playerOneImage: null,
-            playerTwoImage: null
-        };
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleReset = this.handleReset.bind(this);
-    }
-    handleSubmit(id,username) {
+    state = {
+        playerOneName: '',
+        playerTwoName: '',
+        playerOneImage: null,
+        playerTwoImage: null
+    };
+    handleSubmit = (id,username) => {
         this.setState(() => {
             let newState = {
                 [`${id}Name`] : username,
@@ -67,8 +58,8 @@ class Battle extends React.Component {
             };
             return newState;
         })
-    }
-    handleReset(id) {
+    };
+    handleReset = id => {
         this.setState(() => {
             let newState = {
                 [`${id}Name`] : '',
@@ -76,7 +67,7 @@ class Battle extends React.Component {
             };
             return newState;
         });
-    }
+    };
     render() {
         const { match } = this.props;
         const { playerOneName,playerTwoName,playerOneImage,playerTwoImage } = this.state;
