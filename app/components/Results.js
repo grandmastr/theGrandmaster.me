@@ -7,7 +7,7 @@ import PlayerPreview from './PlayerPreview';
 import  Loading from './loading';
 
 const Profile = props => {
-    const { avatar_url,login,name,location,company,folloers,following,public_repos,blog } = this.props.info;
+    const { avatar_url,login,name,location,company,followers,following,public_repos,blog } = this.props.info;
     return (
         <PlayerPreview avatar={ avatar_url } username={ login }>
             <ul style={{textAlign: "center"}} className="space-list-items">
