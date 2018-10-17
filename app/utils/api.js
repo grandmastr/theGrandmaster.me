@@ -1,4 +1,5 @@
-let axios = require('axios');
+import axios from 'axios';
+
 let getProfile = username => {
     return axios.get(`https://api.github.com/users/${username}`)
         .then(user => {
@@ -33,15 +34,14 @@ const getUserData = player => {
     ));
 };
 const sortPlayers = players => players.sort((p1,p2) => p2.score - p1.score );
-module.exports = {
-    battle: players => {
-        return Promise.all(players.map(getUserData))
-            .then(sortPlayers)
-            .catch(handleError)
-    },
-    fetchPopularRepos: language => {
-        const encodedURI = window.encodeURI(`https://api.github.com/search/repositories?q=stars:>1+language: ${language} &sort=stars&order=desc&type=Repositories&per_page=100`);
-        return axios.get(encodedURI)
-            .then(({data}) => data.items);
-    }
-};
+
+export function battle(players) {
+    return Promise.all(players.map(getUserData))
+        .then(sortPlayers)
+        .catch(handleError)
+}
+export function fetchPopularRepos(language) {
+    const encodedURI = window.encodeURI(`https://api.github.com/search/repositories?q=stars:>1+language: ${language} &sort=stars&order=desc&type=Repositories&per_page=100`);
+    return axios.get(encodedURI)
+        .then(({data}) => data.items);
+}

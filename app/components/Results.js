@@ -1,10 +1,10 @@
-const React = require('react');
-const queryString = require('query-string');
-const api = require('../utils/api');
-const Link = require('react-router-dom').Link;
-const PropTypes = require('prop-types');
-const PlayerPreview = require('./PlayerPreview');
-const Loading = require('./loading');
+import React from 'react';
+import queryString from 'query-string';
+import { battle } from '../utils/api';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import PlayerPreview from './PlayerPreview';
+import  Loading from './loading';
 
 const Profile = props => {
     const { avatar_url,login,name,location,company,folloers,following,public_repos,blog } = this.props.info;
@@ -56,7 +56,7 @@ class Results extends React.Component {
     }
     componentDidMount() {
         const { playerOneName,playerTwoName } = queryString.parse(this.props.location.search);
-        api.battle([
+        battle([
             playerOneName,
             playerTwoName
         ]).then(results => {
@@ -103,4 +103,4 @@ class Results extends React.Component {
         )
     }
 }
-module.exports = Results;
+export default Results;
