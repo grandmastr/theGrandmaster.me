@@ -94,7 +94,6 @@ ul{
 }
 .avatar{
     width:150px;
-    border:2px solid var(--primary-text-color);
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;

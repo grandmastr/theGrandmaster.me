@@ -1,13 +1,12 @@
-let React = require('react');
-let ReactRouter = require('react-router-dom');
-let Router = ReactRouter.BrowserRouter;
-let Route = ReactRouter.Route;
-let Switch = ReactRouter.Switch;
-let Nav = require('./Nav');
-let Home = require('./Home');
-let Battle = require('./Battle');
-let Popular = require('./Popular');
-let Result = require('./Results');
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Nav from './Nav';
+import Home from './Home';
+import Battle from './Battle';
+import Popular from './Popular';
+import Result from'./Results';
+
+
 class App extends React.Component {
     render() {
         return(
@@ -26,4 +25,4 @@ class App extends React.Component {
         )
     }
 }
-module.exports = App;
+export default App;

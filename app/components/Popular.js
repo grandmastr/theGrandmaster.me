@@ -1,9 +1,9 @@
-let React = require('react');
-let PropTypes = require('prop-types');
-let api = require('../utils/api');
-let Loading = require('./loading');
+import React from 'react';
+import PropTypes from 'prop-types';
+import { fetchPopularRepos } from '../utils/api';
+import Loading from './loading';
 
-const SelectLanguage = (props) => {
+const SelectLanguage = props => {
     let languages = ['All','JavaScript','Ruby','Java','CSS','Python'];
     return(
         <ul className="languages">
@@ -11,30 +11,28 @@ const SelectLanguage = (props) => {
         </ul>
     )
 };
-const  RepoGrid = props => {
-    return(
+const  RepoGrid = ({ repos }) => (
         <ul className="popular-list">
-            {props.repos.map((repo,index) => (
-                <li key={repo.name} className="popular-item">
+            {repos.map(({ name,owner,html_url,stargazers_count },index) => (
+                <li key={name} className="popular-item">
                     <div className="popular-rank">
                         #{`${index + 1}`}
                     </div>
                     <ul className="space-list-items">
                         <li>
-                            <img className="avatar" src={repo.owner.avatar_url} alt={`Avatar for ${repo.owner.login}`} />
+                            <img className="avatar" src={owner.avatar_url} alt={`Avatar for ${owner.login}`} />
                         </li>
                         <li className="repo-url">
-                            <a href={repo.html_url} target="_blank">
-                                {repo.name}
+                            <a href={html_url} target="_blank">
+                                {name}
                             </a>
                         </li>
-                        <li>@{repo.owner.login}</li>
-                        <li>{repo.stargazers_count} stars</li>
+                        <li>@{owner.login}</li>
+                        <li>{stargazers_count} stars</li>
                     </ul>
                 </li>))}
         </ul>
-    )
-};
+);
 RepoGrid.propType = {
     repos: PropTypes.array.isRequired
 };
@@ -55,29 +53,25 @@ class Popular extends React.Component {
         this.updateLanguage(this.state.selectedLanguage);
     }
     updateLanguage(lang)  {
-        this.setState(() => {
-           return {
+        this.setState(() => ({
                selectedLanguage: lang,
                repos: null
-           }
-        });
-        api.fetchPopularRepos(lang)
+           })
+        );
+        fetchPopularRepos(lang)
             .then(repos => {
-                this.setState(() => {
-                   return {
-                       repos: repos
-                   }
-                });
+                this.setState(() => ({repos}));
             });
     }
     render() {
+        const { selectedLanguage,repos } = this.state;
         return (
             <div>
-                <SelectLanguage selectedLanguage={ this.state.selectedLanguage } onSelect={ this.updateLanguage }/>
-                {!this.state.repos ? <Loading text="one second"/> : <RepoGrid repos={ this.state.repos } />}
+                <SelectLanguage selectedLanguage={ selectedLanguage } onSelect={ this.updateLanguage }/>
+                {!repos ? <Loading text="one second"/> : <RepoGrid repos={ repos } />}
             </div>
 
         )
     }
 }
-module.exports = Popular;
+export default Popular;
