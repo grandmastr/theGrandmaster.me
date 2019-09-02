@@ -1,4 +1,3 @@
-# Github-Battle-App
 ### 1.   Download or Clone Repo
 ### 2.   Installation
 Run
